@@ -4,9 +4,9 @@
 #endif
 
 #include <Windows.h>
-#include <detours/detours.h>
 #include <string>
 #include <vector>
+#include <detours.h>
 #include "IHook.h"
 
 template<class Ret, class ... Args>
