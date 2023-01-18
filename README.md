@@ -1,5 +1,5 @@
 # Detour and Generic Hook Class
-MS Detours lacks OOP, so this wraps and manages a detour. You could also derive from the IHook class and define your own hooking mechanisms or use different libraries.
+MS Detours lacks OOP, so this wraps and manages a detour. You could also derive from the IHook class and define your own hooking mechanisms or use different libraries. MS Detours can be found at https://github.com/microsoft/Detours
 ## Usage:
 Suppose you want to hook a function with the signature `int foo(Object* object, int count)` located at address `void* Target`. 
 
