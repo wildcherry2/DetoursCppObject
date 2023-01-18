@@ -6,7 +6,7 @@
 #include <Windows.h>
 #include <string>
 #include <vector>
-#include <detours.h>
+#include "Detours/include/detours.h"
 #include "IHook.h"
 
 template<class Ret, class ... Args>

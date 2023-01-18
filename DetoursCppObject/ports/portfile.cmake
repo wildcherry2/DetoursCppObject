@@ -1,20 +1,26 @@
-#header-only library
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO wildcherry2/DetoursCppObject
 	HEAD_REF master
-    SHA512 0
-	AUTHORIZATION_TOKEN <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>
 )
 
-vcpkg_cmake_configure(
-    SOURCE_PATH "${SOURCE_PATH}"
-	WINDOWS_USE_MSBUILD
+vcpkg_install_msbuild(
+	SOURCE_PATH ${SOURCE_PATH}
+	PROJECT_SUBPATH DetoursCppObject.sln
+	INCLUDES_SUBPATH DetoursCppObject
+	LICENSE_SUBPATH "LICENSE.txt"
+	PLATFORM "x64"
+	RELEASE_CONFIGURATION "Release"
+	DEBUG_CONFIGURATION "Debug"
+	USE_VCPKG_INTEGRATION
+	ALLOW_ROOT_INCLUDES
 )
 
-vcpkg_cmake_install()
-vcpkg_cmake_config_fixup()
-vcpkg_fixup_pkgconfig()
-vcpkg_copy_pdbs()
+file(RENAME "${CURRENT_PACKAGES_DIR}/include" "${CURRENT_PACKAGES_DIR}/includeTemp")
+file(MAKE_DIRECTORY "${CURRENT_PACKAGES_DIR}/include")
+file(RENAME "${CURRENT_PACKAGES_DIR}/includeTemp" "${CURRENT_PACKAGES_DIR}/include/DetoursCppObject")
+
+file(REMOVE "${CURRENT_PACKAGES_DIR}/include/DetoursCppObject/DetoursCppObject.vcxproj")
+file(REMOVE "${CURRENT_PACKAGES_DIR}/include/DetoursCppObject/DetoursCppObject.vcxproj.filters")
 
 file(INSTALL "${SOURCE_PATH}/LICENSE.txt" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME license)
