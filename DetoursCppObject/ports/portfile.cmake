@@ -7,15 +7,13 @@ vcpkg_from_github(
 vcpkg_install_msbuild(
 	SOURCE_PATH ${SOURCE_PATH}
 	PROJECT_SUBPATH DetoursCppObject.sln
-	INCLUDES_SUBPATH DetoursCppObject
+	INCLUDES_SUBPATH "DetoursCppObject"
 	LICENSE_SUBPATH "LICENSE.txt"
 	PLATFORM "x64"
 	RELEASE_CONFIGURATION "Release"
 	DEBUG_CONFIGURATION "Debug"
 	USE_VCPKG_INTEGRATION
 	ALLOW_ROOT_INCLUDES
-	OPTIONS 
-		/p:AdditionalIncludeDirectories="${CURRENT_INSTALLED_DIR}/Detours"
 )
 
 file(RENAME "${CURRENT_PACKAGES_DIR}/include" "${CURRENT_PACKAGES_DIR}/includeTemp")
