@@ -4,5 +4,11 @@
   "port-version": 1,
   "description": "C++ object that wraps a simple detours from Microsoft's Detours library ",
   "homepage": "https://github.com/wildcherry2/DetoursCppObject",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": [
+	{
+		"name": "detours",
+		"platform" : "windows"
+	}
+  ]
 }
