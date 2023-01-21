@@ -43,7 +43,7 @@ def main():
         project_version_json = GetJsonFromFile(project_version_json_path)
         vcpkg_json = GetJsonFromFile(vcpkg_version_json_path, "r+")
         SyncVersion(project_version_json, vcpkg_json)
-        git_add_ret = subprocess.run(["git", "add", vcpkg_version_json_path])
+        git_add_ret = subprocess.run(["git", "add", vcpkg_version_json_path], text=True)
         print(git_add_ret.stdout)
         print(git_add_ret.stderr)
         git_add_ret.check_returncode()
