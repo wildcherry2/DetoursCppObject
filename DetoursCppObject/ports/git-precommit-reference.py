@@ -44,8 +44,8 @@ def main():
         vcpkg_json = GetJsonFromFile(vcpkg_version_json_path, "r+")
         SyncVersion(project_version_json, vcpkg_json)
         git_add_ret = subprocess.run(["git", "add", vcpkg_version_json_path], text=True)
-        print(git_add_ret.stdout)
-        print(git_add_ret.stderr)
+        if git_add_ret.stdout != None: print(git_add_ret.stdout)
+        if git_add_ret.stderr != None: print(git_add_ret.stderr)
         git_add_ret.check_returncode()
     except Exception as ex:
         print(ex)
