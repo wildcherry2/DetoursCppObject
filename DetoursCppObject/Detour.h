@@ -8,7 +8,7 @@
 #include <vector>
 #include <detours/detours.h>
 #include "IHook.h"
- 
+
 template<class Ret, class ... Args>
 class Detour : public IHook<Ret, Args...>{
     #ifndef Base

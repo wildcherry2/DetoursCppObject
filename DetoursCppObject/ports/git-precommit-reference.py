@@ -2,8 +2,8 @@
 
 import json
 
-project_version_json_path = "version.json"
-vcpkg_version_json_path = "vcpkg.json"
+project_version_json_path = "../../DetoursCppObject/version.json"
+vcpkg_version_json_path = "../../DetoursCppObject/ports/vcpkg.json"
 
 def GetJsonFromFile(path, flags = None):
     file = 0
