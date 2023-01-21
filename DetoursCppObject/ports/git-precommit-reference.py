@@ -1,6 +1,7 @@
 #!/py
 
 import json
+import subprocess
 
 project_version_json_path = "DetoursCppObject/version.json"
 vcpkg_version_json_path = "DetoursCppObject/ports/vcpkg.json"
@@ -42,11 +43,14 @@ def main():
         project_version_json = GetJsonFromFile(project_version_json_path)
         vcpkg_json = GetJsonFromFile(vcpkg_version_json_path, "r+")
         SyncVersion(project_version_json, vcpkg_json)
+		#git_add_ret = subprocess.run(["git", "add", vcpkg_version_json_path])
+		#print(git_add_ret.stdout)
+		#print(git_add_ret.stderr)
+		#git_add_ret.check_returncode()
     except Exception as ex:
         print(ex)
         return 1
-        
     return 0
 
 if __name__ == "__main__":
-    main()
+	main()
