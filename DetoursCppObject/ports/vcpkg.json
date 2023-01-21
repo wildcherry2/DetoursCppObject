@@ -1,6 +1,6 @@
 {
     "name": "detourscppobject",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "port-version": 1,
     "description": "C++ object that wraps a simple detours from Microsoft's Detours library ",
     "homepage": "https://github.com/wildcherry2/DetoursCppObject",
